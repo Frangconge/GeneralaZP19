@@ -1,3 +1,4 @@
+#se establece el dado.
 import random
 def dameDado():
     return random.randrange(1, 7)
@@ -11,6 +12,15 @@ def dameTirada(cantidadDados):
 
 tirada=dameTirada(5)
 
+#se establece la funcion para la tirada(lanzada) inicial; y a la misma
+#se le añadira un contador , junto con un parametro que establesca si
+# se planta en la 1° o 2° lanzada, si se da la 3ra finalizar programa e imprimir.
+contador=tirada=+1
+
+
+
+
+#se establecen las funciones de las jugadas(simples, escalera, full, poker, generala)
 def ordenar_tirada(tirada):
     tirada_ordenada=sorted(tirada)
     return tirada_ordenada
