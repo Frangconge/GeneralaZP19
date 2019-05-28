@@ -49,6 +49,35 @@ def mostrarNombreDeJugada(jugadas):
             print(clave)
 
 
+def infocambiaDado():
+    print('los dados se enumeran del 1 al 5 respectivamente de izq a derch,'
+                 ' es decir, se quieres volver a tirar uno o varios dados '
+                 'ingrese el numero del dado que vuelve al cubilete, sea el dado 1, 2, 3, 4 ó 5'
+                 'en caso de tirarlos todos de vuelta presiona "T" '
+                 'de que Paltarte con la jugada obtenida presiona "P" ')
+
+def cambiaDados():
+    cambiaDados= input('desea volver al tirar algun dado? : S o N')
+    if (cambiaDados=="S"):
+        input("ingrese en numero de los dados que vuelven al cubilete: ")
+
+    elif (cambiaDados =="N"):
+        input('si quieres tirar todo de vuelta presiona "T"'
+              'si quieres plantarte con la jugada obtenida presione "P" ').upper()
+        if (cambiaDados=="T"):
+            tirada = dameTirada(5)
+            print(tirada)
+            mostrarNombreDeJugada(jugadas)
+
+        else:
+           if (cambiaDados=="P"):
+                print(ValorarJugada())
+
+def ValorarJugada():
+
+
+
+
 cubilete=(input('presione "C" para ejecutar la tirada del cubilete: ')).upper()
 if (cubilete=="C"):
     tirada = dameTirada(5)
