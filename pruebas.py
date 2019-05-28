@@ -63,7 +63,7 @@ def cambiaDados():
 
     elif (cambiaDados =="N"):
         input('si quieres tirar todo de vuelta presiona "T"'
-              'si quieres plantarte con la jugada obtenida presione "P" ').upper()
+              'si quieres plantarte con la jugada obtenida presione "P"').upper()
         if (cambiaDados=="T"):
             tirada = dameTirada(5)
             print(tirada)
