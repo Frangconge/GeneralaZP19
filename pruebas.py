@@ -1,17 +1,19 @@
 import random
-import operator
-def dameDado():
-    return random.randrange(1, 7)
+
+# import registro_usuarios
+
+def anotacionPuntos():
+    return registro_usuarios
 
 def dameTirada(cantidadDados):
     lista_dados = []
     for i in range(0,cantidadDados):
-        lista_dados.append(dameDado())
+        lista_dados.append(random.randrange(1, 7))
     return lista_dados
 
 def ordenar_tirada(tirada):
     tirada_ordenada=sorted(tirada)
-    return ordenar_tirada(tirada_ordenada)
+    return tirada_ordenada
 
 def esSimple(tirada):
 
@@ -56,39 +58,47 @@ def infocambiaDado():
                  'en caso de tirarlos todos de vuelta presiona "T" '
                  'de que Paltarte con la jugada obtenida presiona "P" ')
 
-def cambiaDados():
-    cambiaDados= input('desea volver al tirar algun dado? : S o N')
+def cambiaDados(cubil):
+    print(cubil)
+    cambiaDados= input('desea volver al tirar algun dado? : S o N').upper()
     if (cambiaDados=="S"):
-        input("ingrese en numero de los dados que vuelven al cubilete: ")
-
+        intentos = 1
+        while intentos < 3:
+            print(cubil)
+            d = input("Ingrese posición del dado a cambiar (separado por un punto): ")
+            f = d.split(".")
+            for t in f:
+                cubil(int(t) - 1)
+            print(cubil)
+            intentos += 1
     elif (cambiaDados =="N"):
         input('si quieres tirar todo de vuelta presiona "T"'
               'si quieres plantarte con la jugada obtenida presione "P"').upper()
         if (cambiaDados=="T"):
-            tirada = dameTirada(5)
-            print(tirada)
-            mostrarNombreDeJugada(jugadas)
-
+             print (dameTirada(5))
         else:
            if (cambiaDados=="P"):
-                print(ValorarJugada())
+               return  cubil
 
 def ValorarJugada():
+    return
 
 
+def cubilete():
+    Cubilete=(input('presione "C" para ejecutar la tirada del cubilete: ')).upper()
+    if (Cubilete=="C"):
+        tirada = dameTirada(5)
+    return tirada
 
 
-cubilete=(input('presione "C" para ejecutar la tirada del cubilete: ')).upper()
-if (cubilete=="C"):
-    tirada = dameTirada(5)
-
-    jugadas = {'Generala': esGenerala(tirada),'Poker' :esPoker(tirada), 'Full' :esFull(tirada),'Escalera': esEscalera(tirada),'Simple':esSimple(tirada)}
-     #resultado1=esEscalera(mostrar_tirada)
+    #jugadas = {'Generala': esGenerala(tirada),'Poker' :esPoker(tirada), 'Full' :esFull(tirada),'Escalera': esEscalera(tirada),'Simple':esSimple(tirada)}
+    #resultado1=esEscalera(mostrar_tirada)
     #resulatao2=esFull(mostrar_tirada)
     #resultado3=esPoker(mostrar_tirada)
     #resultado4=esGenerala(mostrar_tirada)
 
     print(tirada)
     #print(sorted(jugadas.items(), key=operator.itemgetter(0)))
-    mostrarNombreDeJugada(jugadas)
-
+    #mostrarNombreDeJugada(jugadas)
+cubil = cubilete()
+print(cambiaDados(cubil))
