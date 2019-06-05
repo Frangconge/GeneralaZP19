@@ -2,8 +2,8 @@ import random
 
 #import registro_usuarios
 
-def anotacionPuntos():
-    return registro_usuarios
+#def anotacionPuntos():
+    #return registro_usuarios
 
 def dameTirada(cantidadDados):
     lista_dados = []
