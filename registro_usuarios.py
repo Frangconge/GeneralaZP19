@@ -1,6 +1,7 @@
 #import sqlite3
 
 from tabulate import tabulate
+# la idea es crear un menu para consultar instrucciones del juego o iniciar un juego directamente.
 #import turtle
 window = Tk()
 menu = Menu(window)
