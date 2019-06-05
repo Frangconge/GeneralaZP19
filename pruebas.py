@@ -1,6 +1,6 @@
 import random
 
-# import registro_usuarios
+#import registro_usuarios
 
 def anotacionPuntos():
     return registro_usuarios
@@ -10,6 +10,16 @@ def dameTirada(cantidadDados):
     for i in range(0,cantidadDados):
         lista_dados.append(random.randrange(1, 7))
     return lista_dados
+
+def cubilete():
+    Cubilete=(input('presione "C" para ejecutar la tirada del cubilete: ')).upper()
+    if (Cubilete=="C"):
+        tirada = dameTirada(5)
+    return print(tirada)
+
+tirada = dameTirada(5)
+
+
 
 def ordenar_tirada(tirada):
     tirada_ordenada=sorted(tirada)
@@ -59,12 +69,12 @@ def infocambiaDado():
                  'de que Paltarte con la jugada obtenida presiona "P" ')
 
 def cambiaDados(cubil):
-    print(cubil)
-    cambiaDados= input('desea volver al tirar algun dado? : S o N').upper()
+
+    cambiaDados= input('desea volver al tirar algun dado? : S o N => ').upper()
     if (cambiaDados=="S"):
         intentos = 1
         while intentos < 3:
-            print(cubil)
+
             d = input("Ingrese posición del dado a cambiar (separado por un punto): ")
             f = d.split(".")
             for t in f:
@@ -72,10 +82,10 @@ def cambiaDados(cubil):
             print(cubil)
             intentos += 1
     elif (cambiaDados =="N"):
-        input('si quieres tirar todo de vuelta presiona "T"'
-              'si quieres plantarte con la jugada obtenida presione "P"').upper()
+        input('si quieres tirar todo de vuelta presiona "T" '
+              'si quieres plantarte con la jugada obtenida presione "P": ').upper()
         if (cambiaDados=="T"):
-             print (dameTirada(5))
+             print (cubilete())
         else:
            if (cambiaDados=="P"):
                return  cubil
@@ -84,20 +94,15 @@ def ValorarJugada():
     return
 
 
-def cubilete():
-    Cubilete=(input('presione "C" para ejecutar la tirada del cubilete: ')).upper()
-    if (Cubilete=="C"):
-        tirada = dameTirada(5)
-    return tirada
 
 
-    #jugadas = {'Generala': esGenerala(tirada),'Poker' :esPoker(tirada), 'Full' :esFull(tirada),'Escalera': esEscalera(tirada),'Simple':esSimple(tirada)}
+
+jugadas = {'Generala': esGenerala(tirada),'Poker' :esPoker(tirada), 'Full' :esFull(tirada),'Escalera': esEscalera(tirada),'Simple':esSimple(tirada)}
     #resultado1=esEscalera(mostrar_tirada)
     #resulatao2=esFull(mostrar_tirada)
     #resultado3=esPoker(mostrar_tirada)
     #resultado4=esGenerala(mostrar_tirada)
 
-    print(tirada)
     #print(sorted(jugadas.items(), key=operator.itemgetter(0)))
     #mostrarNombreDeJugada(jugadas)
 cubil = cubilete()
