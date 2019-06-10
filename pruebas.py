@@ -1,5 +1,18 @@
 import random
 
+import sqlite3
+
+BD = sqlite3.connect('C:\Users\Maq301\PycharmProjects\GeneralaZP19\BD_generala.db')
+
+cursor = BD.cursor()
+
+cursor.execute("INSERT INTO PUNTAJES (ID, ID_JUGADORES, ID_PARTIDAS,"
+               " Al 1, Al 2, Al 3, Al 4, Al 5, Al 6, Escalera, Full, Poker, Generala, Doble_Generala,"
+               " Dado_1, Dado_2, Dado_3, Dado_4, Dado_5) \
+                VALUES {},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{}")
+
+BD.commit()
+
 #import registro_usuarios
 
 #def anotacionPuntos():
