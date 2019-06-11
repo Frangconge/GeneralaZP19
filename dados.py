@@ -9,10 +9,7 @@ def tiro(*args):
     return dados
 
 def dameTirada():
-    lista_dados = []
-    for i in range(0,1):
-        lista_dados.append(tiro())
-    return lista_dados
+      return tiro()
 
 def cambiaDados(*args):
     cubil = dameTirada()
@@ -21,11 +18,10 @@ def cambiaDados(*args):
     if (cambiaDados=="S"):
         intentos = 1
         while intentos < 3:
-            print(cubil)
             d = input("Ingrese posición del dado a cambiar (separado por un punto): ")
             f = d.split(".")
             for t in f:
-                cubil(int(t) - 1)
+                cubil[int(t) - 1]=random.randrange(1, 7)
             print(cubil)
             intentos += 1
     elif (cambiaDados =="N"):
@@ -37,4 +33,5 @@ def cambiaDados(*args):
            if (cambiaDados=="P"):
                return  cubil
 
-cambiaDados()
+jugadaFinal=cambiaDados()
+juegosPosibles= ValorarJugada(jugadafinal)
