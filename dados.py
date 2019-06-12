@@ -11,7 +11,7 @@ def tiro(*args):
 def dameTirada():
       return tiro()
 
-def cambiaDados(*args):
+def cambiaDados():
     cubil = dameTirada()
     print(cubil)
     cambiaDados= input('desea volver al tirar algun dado? : S o N').upper()
