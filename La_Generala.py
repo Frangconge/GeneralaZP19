@@ -3,7 +3,7 @@
 import random
 #para una configuracion de azar que se usara en los dados ha jugar.
 
-from tabulate import tabulate
+#from tabulate import tabulate
 #para crear la tabla donde se mostraran los puntos anotados por los jugadores
 
 import sqlite3
@@ -36,8 +36,6 @@ while True:
               "de acuerdo a la valoración establecida para cada jugada posible en el juego,\n"
               "llamada categoría.\n"
               "\n"
-              "Se establece el orden de los jugadores\n"
-              "\n"
               "Existen 11 posibles categorías, por lo que cada jugador tendrá 11 tiros posibles en el juego.\n"
               "Cada tirada consiste en el lanzamiento de los cinco dados\n"
               "y según sean los números que salgan se podrá optar a una categoría;\n"
@@ -57,17 +55,23 @@ while True:
               "Cuando se optine una tirada servida, a la puntuacion se le añaden 5pts adicionales. "
               "\n"
               "Se anotara la puntuación de cada jugador en una planilla donde estan las once categorías posibles,\n"
-              'que van de la categoría 1 a la 6 y luego las categorías que se llaman "Juegos mayores", \n'"
+              'que van de la categoría 1 a la 6 y luego las categorías que se llaman "Juegos mayores", \n'
               "que son escalera, full, póquer, generala y doble generala.\n"
               "\n"
               "CATEGORIAS\n"
               "- Del 1 al 6: Para calcular el puntaje correspondiente a la categoría se suman los números iguales.\n"
-              "- Escalera:  "
-                                                                                                                                                                                                                            " En los encabezados, formando columnas verticales, se colocan los nombres de los jugadores")
+              "- Escalera: Se suman 25 puntos si es servida y 20 puntos si fue armada.\n"
+              "            Se forma con una progresión de números. \n"
+              "            Hay dos posibilidades: 1-2-3-4-5 (escalera menor) y 2-3-4-5-6 (escalera mayor).\n"
+              "- Full: 35 puntos si es servido o 30 puntos si es armado.\n"
+              "        Se forma con dos grupos de dados iguales, uno de tres y otro de dos dados.\n"
+              "- Póker: 45 puntos si es servido o 40 puntos si es armado. Se forma con cuatro dados iguales y uno distinto.\n"
+              "- Generala: 50 puntos si se logra formar cinco números iguales en dos o tres tiros.\n"
+              "- Generala Doble: 100 puntos si se logra formar dos generalas en dos tiros de tres.\n"
+              "- Generala Servida: Cuando se logra la Generala servida y el jugador que la tira gana inmediatamente.\n"
 
-
-
-
+              "\n")
+        salir = True
 
     elif (opcionMenu=="2"):
         print("JUEGO NUEVO")
